@@ -4,7 +4,7 @@ import math
 # input values
 print() # spacing 
 print("Storage Converter")
-print("Convert from one data(images, videos or files(documents or pdfs)) size to another")
+print("Convert from one data(images, videos or files(documents or PDFs)) size to another")
 print() # spacing
 
 print("What format is your data;\n\nEnter 1 for:GB\nEnter 2 for:MB\nEnter 3 for:KB"
@@ -40,34 +40,61 @@ def GB_data_format():
     if second_choice == 1:
         # straight conversion from GB to MB
         file_size_in_MB = file_size_in_GB * 1024
+        # convert from GB to MB(decimal format)
+        file_size_in_mb = file_size_in_GB * 1000
+
         print() # spacing
-        results = f"Your data in MB(binary format): {file_size_in_MB} MegaBytes\nYour data in MB(readable format): {math.trunc(file_size_in_MB):,d} Megabytes"
+        result_decimal = f"Your data in MB(decimal format): readable; {math.trunc(int(file_size_in_mb)):,d} accurate; {file_size_in_mb} MegaBytes"
+        result_binary = f"Your data in MB(binary format): readable; {math.trunc(int(file_size_in_MB)):,d} accurate; {file_size_in_MB} MegaBytes"
+        results = f"{result_decimal}\n{result_binary}"
         print() # spacing
 
     elif second_choice == 2:
         # first convert from GB to MB then take that value & convert to KB
         file_size_in_KB = (file_size_in_GB * (1024**2))
+        # convert from GB to KB(decimal format)
+        file_size_in_kb = (file_size_in_GB * (1000**2))
+
         print() # spacing
-        results = f"Your data in KB(binary format): {file_size_in_KB} KiloBytes\nYour data in KB(readable format): {math.trunc(file_size_in_KB):,d} Kilobytes"
+        result_decimal = f"Your data in KB(decimal format): readable; {math.trunc(int(file_size_in_kb)):,d} accurate; {file_size_in_kb} KiloBytes"
+        result_binary = f"Your data in KB(binary format): readable; {math.trunc(int(file_size_in_KB)):,d} accurate; {file_size_in_KB} KiloBytes"
+        results = f"{result_decimal}\n{result_binary}"
         print() # spacing
+
     elif second_choice == 3:
         # exponentiation used for repeated multiplication
         # convert from GB to MB from MB to KB then finally from KB to bytes
-        file_size_in_bytes = (file_size_in_GB * (1024**3))
+        file_size_in_Bytes = (file_size_in_GB * (1024**3))
+        # convert from GB to MB from MB to KB then from KB to bytes
+        file_size_in_bytes = (file_size_in_GB * (1000**3))
+
         print() # spacing
-        results = f"Your data in Bytes(binary format): {file_size_in_bytes} Bytes\nYour data in Bytes(readable format): {math.trunc(file_size_in_bytes):,d} Bytes"
+        result_decimal = f"Your data in Bytes(decimal format): readable; {math.trunc(int(file_size_in_bytes)):,d} accurate; {file_size_in_bytes} Bytes"
+        result_binary = f"Your data in Bytes(binary format): readable; {math.trunc(int(file_size_in_Bytes)):,d} accurate; {file_size_in_Bytes} Bytes"
+        results = f"{result_decimal}\n{result_binary}"
         print() # spacing
+
     elif second_choice == 4:
         # convert from GB to bytes then from bytes to bits then finally from bits to nibbles
         file_size_in_nibbles = (file_size_in_GB * (1024**3) * 8) // 4
+        # convert from GB to bytes then from bytes to bits then from bits to nibbles(decimal)
+        file_size_in_Nibbles = (file_size_in_GB * (1000**3) * 8) // 4
+
         print() # spacing
-        results = f"Your data in nibbles(binary format): {file_size_in_nibbles} Nibbles\nYour data in nibbles(readable format): {math.trunc(file_size_in_nibbles):,d} Nibbles"
+        result_decimal = f"Your data in nibbles(decimal format): readable; {math.trunc(int(file_size_in_Nibbles)):,d} accurate; {file_size_in_Nibbles} Nibbles"
+        result_binary = f"Your data in nibbles(binary format): readable; {math.trunc(int(file_size_in_nibbles)):,d} accurate; {file_size_in_nibbles} Nibbles"
+        results = f"{result_decimal}\n{result_binary}"
         print() # spacing
+
     elif second_choice == 5:
         # convert from GB straight to bytes then from bytes to bits
         file_size_in_bits = (file_size_in_GB * (1024**3) * 8)
+        # convert from GB straight to bytes then from bytes to bits(decimal)
+        file_size_in_Bits = (file_size_in_GB * (1000**3) * 8)
+
         print() # spacing
-        results = f"Your data in bits(binary format): {file_size_in_bits} Bits\nYour data in bits(readable format): {math.trunc(file_size_in_bits):,d} Bits"
+        result_binary = f"Your data in bits(binary format): readable; {math.trunc(int(file_size_in_bits)):,d} accurate; {file_size_in_bits} Bits"
+        result_decimal = f"Your data in bits(decimal format): readable; {math.trunc(int(file_size_in_Bits)):,d} accurate; {file_size_in_Bits} Bits"
         print() # spacing
     else:
         results = "Follow instructions and always select an option😁"
