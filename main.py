@@ -215,23 +215,34 @@ def KB_data_format():
 # data in byte format function
 def byte_data_format():
     file_size_in_bytes = float(input("Enter the size of the data: "))
-    print() # spacing
+    print() 
     print(f"Would you like to convert from;\n\nEnter 1 for; Bytes to Nibbles\nEnter 2 for; Bytes to Bits")
-    print() # spacing
+    print()
 
     second_choice = int(input("Select one option from the list above(1-2): "))
     if second_choice == 1:
         # convert the bytes to bits then from bits to nibbles
         file_size_in_nibbles = (file_size_in_bytes * 8) // 4
-        print() # spacing
-        results = f"Your data in nibbles(binary format): {file_size_in_nibbles} Nibbles\nYour data in nibbles(readable format): {math.trunc(file_size_in_nibbles):,d} Nibbles"
-        print() # spacing
+        # decimal
+        file_size_in_Nibbles = (file_size_in_bytes * 8) // 4
+
+        print()
+        result_binary = f"Your data in nibbles(binary format): readable; {math.trunc(int(file_size_in_nibbles)):,d}, accurate; {file_size_in_nibbles} Nibbles"
+        result_decimal = f"Your data in nibbles(decimal format): readable; {math.trunc(int(file_size_in_Nibbles)):,d}, accurate; {file_size_in_Nibbles} Nibbles"
+        results = f"{result_decimal}\n{result_binary}"
+        print()
+
     elif second_choice == 2:
         # convert straight from bytes to bits
         file_size_in_bits = file_size_in_bytes * 8
-        print() # spacing
-        results = f"Your data in bits(binary format): {file_size_in_bits} Bits\nYour data in bits(readable format): {math.trunc(file_size_in_bits):,d} Bits"
-        print() # spacing
+        # decimal
+        file_size_in_Bits = file_size_in_bytes * 8
+
+        print()
+        result_binary = f"Your data in bits(binary format): readable; {math.trunc(int(file_size_in_bits)):,d}, accurate; {file_size_in_bits} Bits"
+        result_decimal = f"Your data in bits(decimal format): readable; {math.trunc(int(file_size_in_Bits)):,d}, accurate; {file_size_in_Bits} Bits"
+        results = f"{result_decimal}\n{result_binary}"
+        print()
     else:
         results = "Follow instructions and always select an option😁"
 
@@ -240,18 +251,22 @@ def byte_data_format():
 # data in nibble format function
 def nibble_data_format():
     file_size_in_nibbles = float(input("Enter the size of the data: "))
-    print() # spacing
+    print()
     print(f"Would you like to convert from;\n\nEnter 1 for; Nibbles to Bits")
-    print() # spacing
+    print()
 
     second_choice = int(input("Select the option above('Press 1'): "))
 
     if choice == 1:
         # convert from nibbles to bits
         file_size_in_bits = file_size_in_nibbles * 4
-        print() # spacing
-        results = f"Your data in bits(binary format): {file_size_in_bits} Bits\nYour data in bits(readable format): {math.trunc(file_size_in_bits):,d} Bits"
-        print() # spacing
+        # decimal
+        file_size_in_Bits = file_size_in_nibbles * 4
+
+        print()
+        result_binary = f"Your data in bits(binary format): readable; {math.trunc(int(file_size_in_bits)):,d}, accurate; {file_size_in_bits} Bits"
+        result_decimal = f"Your data in bits(decimal format): readable; {math.trunc(int(file_size_in_Bits)):,d}, accurate; {file_size_in_Bits} Bits"
+        print()
     else:
         results = "Follow instructions and always select an option😁"
     
