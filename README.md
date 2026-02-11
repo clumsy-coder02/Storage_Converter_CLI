@@ -22,7 +22,8 @@ This repository contains a simple converter program implemented in `main.py` tha
 2. Run the program:
 
 ```bash
-python main.py
+python main.py or python3 main.py
+
 ```
 
 Adjust or inspect `main.py` to see input options or to integrate the converter into other scripts.
